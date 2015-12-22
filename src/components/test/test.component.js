@@ -6,7 +6,9 @@ import testTemplate from './test.template.html!text'
 //own stuff
 import TestController from './test.controller.js'
 
-export default angular.module('testComponent',[]).directive('myTest', function () {
+export let name = 'testComponent'
+
+angular.module(name, []).directive('myTest', function () {
   return {
     restrict: 'E',
     scope: {},

@@ -4,6 +4,9 @@ import ngMaterial from 'angular-material'
 //CSS
 import 'angular-material/angular-material.css!'
 
-import 'components/test/test.component.js'
+import * as componentsModule from 'components/components.module.js'
 
-angular.module('testapp', ['ngMaterial', 'testComponent'])
+angular.module('testapp', [
+    'ngMaterial',
+    componentsModule.name
+])
