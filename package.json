@@ -1,0 +1,28 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "scripts": {
+    "serve": "browser-sync start --files 'src/**/*.html,src/**/*.css,src/**/*.js' --server 'src'"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.10.1",
+    "jspm": "^0.16.19"
+  },
+  "jspm": {
+    "directories": {
+      "baseURL": "src"
+    },
+    "dependencies": {
+      "angular": "github:angular/bower-angular@^1.4.8",
+      "angular-material": "github:angular/bower-material@^1.0.1",
+      "css": "github:systemjs/plugin-css@^0.1.20",
+      "json": "github:systemjs/plugin-json@^0.1.0",
+      "text": "github:systemjs/plugin-text@^0.0.4"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4"
+    }
+  }
+}
