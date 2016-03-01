@@ -1,9 +1,7 @@
 import angular from 'angular'
 
-import * as testComponent from './test/test.component.js'
+import testComponent from './test/test.component.js'
 
-export let name = 'test.components'
-
-angular.module(name, [
-    testComponent.name
-])
+export default angular.module('test.components', [
+  testComponent
+]).name

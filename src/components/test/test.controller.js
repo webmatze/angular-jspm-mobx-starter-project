@@ -1,5 +1,5 @@
-export default function TestController() {
-  this.openCool = function() {
-    alert('This is cool!')
+export default function TestController () {
+  this.openCool = function () {
+    window.alert('This is cool!')
   }
 }

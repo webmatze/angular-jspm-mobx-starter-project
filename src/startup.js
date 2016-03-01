@@ -1,13 +1,13 @@
 import angular from 'angular'
 
-//CSS
+// CSS
 import 'angular-material/angular-material.css!'
 
-//modules
+// modules
 import ngMaterial from 'angular-material'
-import * as componentsModule from 'components/components.module.js'
+import componentsModule from 'components/components.module.js'
 
 angular.module('testapp', [
-    ngMaterial,
-    componentsModule.name
+  ngMaterial,
+  componentsModule
 ])

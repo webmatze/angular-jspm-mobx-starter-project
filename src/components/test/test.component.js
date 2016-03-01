@@ -1,14 +1,12 @@
 import angular from 'angular'
 
-//Template
+// Template
 import testTemplate from './test.template.html!text'
 
-//own stuff
+// own stuff
 import TestController from './test.controller.js'
 
-export let name = 'testComponent'
-
-angular.module(name, []).directive('myTest', function () {
+export default angular.module('testComponent', []).directive('myTest', function () {
   return {
     restrict: 'E',
     scope: {},
@@ -19,5 +17,4 @@ angular.module(name, []).directive('myTest', function () {
       name: '@'
     }
   }
-})
-
+}).name
