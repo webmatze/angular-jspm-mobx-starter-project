@@ -1,5 +1,5 @@
 <div>
   <input type="checkbox" ng-model="$ctrl.item.finished" />
-  <span>{{$ctrl.item.name}}</span>
+  <span ng-style="{textDecoration: ($ctrl.item.finished ? 'line-through' : 'none')}">{{$ctrl.item.name}}</span>
   <button ng-click="$ctrl.onDelete({item: $ctrl.item})">Delete Item</button>
 </div>
