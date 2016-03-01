@@ -1,0 +1,7 @@
+.todo-list {
+  max-width: 400px;
+  margin: 50px auto;
+}
+.todo-list .md-errors-spacer {
+  display: none;
+}
