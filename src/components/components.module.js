@@ -1,9 +1,9 @@
 import angular from 'angular'
 
-import testComponent from './test/test.component.js'
-import userComponent from './user/user.component.js'
+import todoListComponent from './todo-list/todo-list.component.js'
+import todoItemComponent from './todo-item/todo-item.component.js'
 
 export default angular.module('test.components', [
-  testComponent,
-  userComponent
+  todoListComponent,
+  todoItemComponent
 ]).name

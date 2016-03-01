@@ -1,0 +1,10 @@
+<div class="todo-list">
+  <todo-item item='item' ng-repeat="item in $ctrl.dataStore.items" on-delete="$ctrl.deleteItem(item)"></todo-item>
+  <div>
+    <form>
+      <input type="text" ng-model="$ctrl.dataStore.newItem.name" placeholder="name" />
+      <button ng-click="$ctrl.addItem($ctrl.dataStore.newItem)">Add Item</button>
+    </form>
+  </div>
+  <div>Finished Todos: {{$ctrl.dataStore.finishedItems}}</div>
+</div>
