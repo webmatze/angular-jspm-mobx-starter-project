@@ -6,15 +6,10 @@ import testTemplate from './test.template.html!text'
 // own stuff
 import TestController from './test.controller.js'
 
-export default angular.module('testComponent', []).directive('myTest', function () {
-  return {
-    restrict: 'E',
-    scope: {},
-    template: testTemplate,
-    controller: TestController,
-    controllerAs: 'test',
-    bindToController: {
-      name: '@'
-    }
+export default angular.module('testComponent', []).component('myTest', {
+  template: testTemplate,
+  controller: TestController,
+  bindings: {
+    name: '@'
   }
 }).name
