@@ -9,6 +9,9 @@ export default function TodoListController () {
     items: [],
     finishedItems: function () {
       return this.items.filter((item) => { return item.finished }).length
+    },
+    unfinishedItems: function () {
+      return this.items.filter((item) => { return !item.finished }).length
     }
   })
   this.dataStore.items.observe((change) => {
