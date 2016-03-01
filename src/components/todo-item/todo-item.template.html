@@ -1,5 +1,5 @@
-<div>
-  <input type="checkbox" ng-model="$ctrl.item.finished" />
-  <span ng-style="{textDecoration: ($ctrl.item.finished ? 'line-through' : 'none')}">{{$ctrl.item.name}}</span>
-  <button ng-click="$ctrl.onDelete({item: $ctrl.item})">Delete Item</button>
-</div>
+<md-list-item layout="row" layout-align="space-between">
+  <md-checkbox type="checkbox" ng-model="$ctrl.item.finished">Finish Item</md-checkbox>
+  <span flex ng-style="{textDecoration: ($ctrl.item.finished ? 'line-through' : 'none')}">{{$ctrl.item.name}}</span>
+  <md-button class="md-fab md-mini" ng-click="$ctrl.onDelete({item: $ctrl.item})">x<md-tooltip>Delete Item</md-tooltip></md-button>
+</md-list-item>

@@ -1,10 +1,19 @@
-<div class="todo-list">
-  <todo-item item='item' ng-repeat="item in $ctrl.dataStore.items" on-delete="$ctrl.deleteItem(item)"></todo-item>
-  <div>
-    <form>
-      <input type="text" ng-model="$ctrl.dataStore.newItem.name" placeholder="name" />
-      <button ng-click="$ctrl.addItem($ctrl.dataStore.newItem)">Add Item</button>
-    </form>
-  </div>
-  <div>Finished Todos: {{$ctrl.dataStore.finishedItems}}</div>
-</div>
+<md-card class="todo-list">
+  <md-card-title>
+    <md-card-title-text>
+      <span class="md-headline">My Todo List</span>
+      <span class="md-subhead">
+        Finished Todos: {{$ctrl.dataStore.finishedItems}}
+      </span>
+    </md-card-title-text>
+  </md-card-title>
+  <md-card-content>
+    <md-list>
+      <todo-item item='item' ng-repeat="item in $ctrl.dataStore.items" on-delete="$ctrl.deleteItem(item)"></todo-item>
+    </md-list>
+  </md-card-content>
+  <md-card-actions layout="row" layout-align="start center">
+    <md-input-container flex><input required ng-model="$ctrl.dataStore.newItem.name" placeholder="what do you want to do?" /></md-input-container>
+    <md-button class="md-primary md-raised" ng-click="$ctrl.addItem($ctrl.dataStore.newItem)">Add Item</md-button>
+  </md-card-actions>
+</md-card>
