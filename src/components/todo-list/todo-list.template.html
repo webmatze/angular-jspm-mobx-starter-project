@@ -10,11 +10,11 @@
   </md-card-title>
   <md-card-content>
     <md-list>
-      <todo-item item='item' ng-repeat="item in $ctrl.dataStore.items" on-delete="$ctrl.deleteItem(item)"></todo-item>
+      <todo-item item='item' ng-repeat="item in $ctrl.dataStore.items track by item.$mobx.id" on-delete="$ctrl.deleteItem(item)"></todo-item>
     </md-list>
   </md-card-content>
   <md-card-actions layout="row" layout-align="start center">
-    <md-input-container flex><input required ng-model="$ctrl.dataStore.newItem.name" placeholder="what do you want to do?" /></md-input-container>
+    <md-input-container flex><input required ng-model="$ctrl.dataStore.newItem.name" placeholder="what do you want to do?" ng-keypress='$ctrl.addItemOnEnter($event, $ctrl.dataStore.newItem)' /></md-input-container>
     <md-button class="md-primary md-raised" ng-click="$ctrl.addItem($ctrl.dataStore.newItem)">Add Item</md-button>
   </md-card-actions>
 </md-card>
