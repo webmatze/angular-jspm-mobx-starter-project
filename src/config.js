@@ -14,8 +14,8 @@ System.config({
   },
 
   map: {
-    "angular": "github:angular/bower-angular@1.4.8",
-    "angular-material": "github:angular/bower-material@1.0.1",
+    "angular": "github:angular/bower-angular@1.5.0",
+    "angular-material": "github:angular/bower-material@1.0.6",
     "babel": "npm:babel-core@5.8.34",
     "babel-runtime": "npm:babel-runtime@5.8.34",
     "clean-css": "npm:clean-css@3.4.8",
@@ -23,16 +23,20 @@ System.config({
     "css": "github:systemjs/plugin-css@0.1.20",
     "json": "github:systemjs/plugin-json@0.1.0",
     "text": "github:systemjs/plugin-text@0.0.4",
-    "github:angular/bower-angular-animate@1.4.8": {
-      "angular": "github:angular/bower-angular@1.4.8"
+    "github:angular/bower-angular-animate@1.5.0": {
+      "angular": "github:angular/bower-angular@1.5.0"
     },
-    "github:angular/bower-angular-aria@1.4.8": {
-      "angular": "github:angular/bower-angular@1.4.8"
+    "github:angular/bower-angular-aria@1.5.0": {
+      "angular": "github:angular/bower-angular@1.5.0"
     },
-    "github:angular/bower-material@1.0.1": {
-      "angular": "github:angular/bower-angular@1.4.8",
-      "angular-animate": "github:angular/bower-angular-animate@1.4.8",
-      "angular-aria": "github:angular/bower-angular-aria@1.4.8",
+    "github:angular/bower-angular-messages@1.5.0": {
+      "angular": "github:angular/bower-angular@1.5.0"
+    },
+    "github:angular/bower-material@1.0.6": {
+      "angular": "github:angular/bower-angular@1.5.0",
+      "angular-animate": "github:angular/bower-angular-animate@1.5.0",
+      "angular-aria": "github:angular/bower-angular-aria@1.5.0",
+      "angular-messages": "github:angular/bower-angular-messages@1.5.0",
       "css": "github:systemjs/plugin-css@0.1.20"
     },
     "github:jspm/nodelibs-assert@0.1.0": {
