@@ -2,7 +2,7 @@
   <div ng-dblclick='$ctrl.toggleEdit()' ng-switch-when='false'>{{$ctrl.text}}</div>
   <div ng-switch-when='true'>
     <md-input-container md-no-float="true">
-      <input type="text" ng-model='$ctrl.tempText' ng-keypress="$ctrl.toggleEditOnEnter($event)" />
+      <input type="text" ng-model='$ctrl.text' ng-keypress="$ctrl.toggleEditOnEnter($event)" />
     </md-input-container>
   </div>
 </div>
