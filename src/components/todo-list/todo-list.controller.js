@@ -2,6 +2,7 @@ import {observable} from 'mobx'
 
 export default function TodoListController () {
   this.dataStore = observable({
+    title: 'My Todo List',
     newItem: {
       name: '',
       finished: false
@@ -29,5 +30,8 @@ export default function TodoListController () {
   }
   this.deleteItem = function (item) {
     this.dataStore.items.remove(item)
+  }
+  this.setTitle = function (text) {
+    this.dataStore.title = text
   }
 }

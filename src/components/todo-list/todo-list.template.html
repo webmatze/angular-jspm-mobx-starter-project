@@ -1,7 +1,7 @@
 <md-card class="todo-list">
   <md-card-title>
     <md-card-title-text>
-      <span class="md-headline">My Todo List</span>
+      <span class="md-headline"><dbl-click-edit text='$ctrl.dataStore.title' on-change="$ctrl.setTitle(text)"></dbl-click-edit></span>
       <span class="md-subhead">
         Done: <strong>{{$ctrl.dataStore.finishedItems}}</strong>
         Open: <strong>{{$ctrl.dataStore.unfinishedItems}}</strong>
