@@ -1,5 +1,5 @@
 <md-list-item layout="row" layout-align="space-between">
   <md-checkbox type="checkbox" ng-model="$ctrl.item.finished">Finish Item</md-checkbox>
-  <span flex ng-style="{textDecoration: ($ctrl.item.finished ? 'line-through' : 'none')}">{{$ctrl.item.name}}</span>
+  <dbl-click-edit ng-class="$ctrl.item.itemClass" flex text='$ctrl.item.name' on-change="$ctrl.setName(text)"></dbl-click-edit>
   <md-button class="md-fab md-mini" ng-click="$ctrl.onDelete({item: $ctrl.item})">x<md-tooltip>Delete Item</md-tooltip></md-button>
 </md-list-item>

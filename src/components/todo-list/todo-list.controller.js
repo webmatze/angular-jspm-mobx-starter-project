@@ -2,14 +2,12 @@ import {observable} from 'mobx'
 
 export default function TodoListController () {
   this.dataStore = observable({
+    title: 'My Todo List',
     newItem: {
       name: '',
       finished: false
     },
     items: [],
-    finishedItems: function () {
-      return this.items.filter((item) => { return item.finished }).length
-    },
     unfinishedItems: function () {
       return this.items.filter((item) => { return !item.finished }).length
     }
@@ -24,5 +22,12 @@ export default function TodoListController () {
   }
   this.deleteItem = function (item) {
     this.dataStore.items.remove(item)
+  }
+  this.setTitle = function (text) {
+    this.dataStore.title = text
+  }
+  this.archive = function () {
+    let unarchived = this.dataStore.items.filter((item) => { return !item.finished })
+    this.dataStore.items.replace(unarchived)
   }
 }
