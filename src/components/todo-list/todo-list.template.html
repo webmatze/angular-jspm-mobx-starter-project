@@ -13,11 +13,10 @@
       <todo-item item='item' ng-repeat="item in $ctrl.dataStore.items track by item.$mobx.id" on-delete="$ctrl.deleteItem(item)"></todo-item>
     </md-list>
   </md-card-content>
-  <md-card-actions>
+  <md-card-footer>
     <form layout="row" layout-align="space-between center" flex ng-submit="$ctrl.addItem($ctrl.dataStore.newItem)">
       <md-input-container flex><input required ng-model="$ctrl.dataStore.newItem.name" placeholder="what do you want to do?" /></md-input-container>
-      &nbsp;
       <md-button type="submit" class="md-primary md-raised">Add Item</md-button>
     </form>
-  </md-card-actions>
+  </md-card-footer>
 </md-card>
