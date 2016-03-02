@@ -8,5 +8,14 @@ export default function DblClickEditController () {
       this.onChange({text: this.text})
       this.toggleEdit()
     }
+    return true
+  }
+  this.handleClicks = function ($event) {
+    if ($event.type === 'click') {
+      $event.preventDefault()
+      $event.stopPropagation()
+      $event.stopImmediatePropagation()
+    }
+    return true
   }
 }
