@@ -2,7 +2,7 @@
   "name": "angular-material-jspm-mobx-starter",
   "version": "0.2.0",
   "scripts": {
-    "serve": "browser-sync start --files 'src/**/*.html,src/**/*.css,src/**/*.js' --server 'src'"
+    "serve": "browser-sync start --files src/**/*.html,src/**/*.css,src/**/*.js --server src"
   },
   "devDependencies": {
     "browser-sync": "^2.10.1",
