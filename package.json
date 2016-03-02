@@ -1,6 +1,6 @@
 {
-  "name": "test",
-  "version": "1.0.0",
+  "name": "angular-material-jspm-mobx-starter",
+  "version": "0.2.0",
   "scripts": {
     "serve": "browser-sync start --files 'src/**/*.html,src/**/*.css,src/**/*.js' --server 'src'"
   },
