@@ -8,9 +8,6 @@ export default function TodoListController () {
       finished: false
     },
     items: [],
-    finishedItems: function () {
-      return this.items.filter((item) => { return item.finished }).length
-    },
     unfinishedItems: function () {
       return this.items.filter((item) => { return !item.finished }).length
     }
@@ -28,5 +25,9 @@ export default function TodoListController () {
   }
   this.setTitle = function (text) {
     this.dataStore.title = text
+  }
+  this.archive = function () {
+    let unarchived = this.dataStore.items.filter((item) => { return !item.finished })
+    this.dataStore.items.replace(unarchived)
   }
 }

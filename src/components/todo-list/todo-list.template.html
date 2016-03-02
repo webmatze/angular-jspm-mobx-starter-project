@@ -3,8 +3,10 @@
     <md-card-title-text>
       <span class="md-headline"><dbl-click-edit text='$ctrl.dataStore.title' on-change="$ctrl.setTitle(text)"></dbl-click-edit></span>
       <span class="md-subhead">
-        Done: <strong>{{$ctrl.dataStore.finishedItems}}</strong>
-        Open: <strong>{{$ctrl.dataStore.unfinishedItems}}</strong>
+        <span>
+          <strong>{{$ctrl.dataStore.unfinishedItems}}</strong> of <strong>{{$ctrl.dataStore.items.length}}</strong> remaining.
+        </span>
+        <md-button class="md-primary" ng-click="$ctrl.archive()">Archive</md-button>
       </span>
     </md-card-title-text>
   </md-card-title>
