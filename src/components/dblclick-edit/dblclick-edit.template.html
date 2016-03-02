@@ -1,5 +1,5 @@
 <div ng-switch='$ctrl.editMode' ng-click="$ctrl.handleClicks($event)">
-  <div ng-dblclick='$ctrl.toggleEdit()' ng-switch-when='false'>{{$ctrl.text}}</div>
+  <div ng-dblclick='$ctrl.toggleEdit()' ng-switch-when='false'>{{$ctrl.text}}<md-tooltip>Doubleclick to edit</md-tooltip></div>
   <div ng-switch-when='true'>
     <md-input-container md-no-float="true">
       <input type="text" ng-model='$ctrl.text' ng-keypress="$ctrl.toggleEditOnEnter($event)" ng-blur="$ctrl.toggleEdit()" autofocus />
