@@ -17,7 +17,7 @@
   </md-card-content>
   <md-card-footer>
     <form layout="row" layout-align="space-between center" flex ng-submit="$ctrl.addItem($ctrl.dataStore.newItem)">
-      <md-input-container flex><input required ng-model="$ctrl.dataStore.newItem.name" placeholder="what do you want to do?" /></md-input-container>
+      <md-input-container flex><input required ng-model="$ctrl.dataStore.newItem.name" placeholder="what do you want to do?" autocomplete="off" autofocus /></md-input-container>
       <md-button type="submit" class="md-primary md-raised">Add Item</md-button>
     </form>
   </md-card-footer>
