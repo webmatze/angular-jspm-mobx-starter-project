@@ -2,6 +2,8 @@
 
 This is just a simple test to see how things work together.
 
+![Todo App Screenshot](resources/screenshot-wide.png?raw=true "Todo App Screenshot")
+
 # Some key features:
 
 - utilizing the new component syntax of AngularJS
