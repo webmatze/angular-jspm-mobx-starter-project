@@ -1,10 +1,10 @@
 <md-card class="todo-list">
   <md-card-title>
     <md-card-title-text>
-      <span class="md-headline"><dbl-click-edit text='$ctrl.dataStore.title' on-change="$ctrl.setTitle(text)"></dbl-click-edit></span>
+      <span class="md-headline"><dbl-click-edit text='$ctrl.data.title' on-change="$ctrl.setTitle(text)"></dbl-click-edit></span>
       <span class="md-subhead">
         <span>
-          <strong>{{$ctrl.dataStore.unfinishedItems}}</strong> of <strong>{{$ctrl.dataStore.items.length}}</strong> remaining.
+          <strong>{{$ctrl.unfinishedTasks.length}}</strong> of <strong>{{$ctrl.itemsCount}}</strong> remaining.
         </span>
         <md-button class="md-primary" ng-click="$ctrl.archive()">Archive</md-button>
       </span>
@@ -12,12 +12,14 @@
   </md-card-title>
   <md-card-content>
     <md-list>
-      <todo-item item='item' ng-repeat="item in $ctrl.dataStore.items track by item.$mobx.id" on-delete="$ctrl.deleteItem(item)"></todo-item>
+      <todo-item item='item' ng-repeat="item in $ctrl.unfinishedTasks track by item.$mobx.id" on-delete="$ctrl.deleteItem(item)"></todo-item>
+      <md-subheader ng-show='$ctrl.finishedTasks.length'>Done Tasks</md-subheader>
+      <todo-item item='item' ng-repeat="item in $ctrl.finishedTasks track by item.$mobx.id" on-delete="$ctrl.deleteItem(item)"></todo-item>
     </md-list>
   </md-card-content>
   <md-card-footer>
-    <form layout="row" layout-align="space-between center" flex ng-submit="$ctrl.addItem($ctrl.dataStore.newItem)">
-      <md-input-container flex><input required ng-model="$ctrl.dataStore.newItem.name" placeholder="what do you want to do?" autocomplete="off" autofocus /></md-input-container>
+    <form layout="row" layout-align="space-between center" flex ng-submit="$ctrl.addItem($ctrl.newItem)">
+      <md-input-container flex><input required ng-model="$ctrl.newItem.name" placeholder="what do you want to do?" autocomplete="off" autofocus /></md-input-container>
       <md-button type="submit" class="md-primary md-raised">Add Item</md-button>
     </form>
   </md-card-footer>
