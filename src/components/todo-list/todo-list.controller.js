@@ -1,35 +1,39 @@
-import {observable} from 'mobx'
+import {autorun, observable} from 'mobx'
 
-export default function TodoListController () {
+export default function TodoListController (dataStore) {
+  // initialize component
   this.$onInit = function () {
-    this.dataStore = observable({
-      title: 'My Todo List',
-      newItem: {
-        name: '',
-        finished: false
-      },
-      items: [],
-      unfinishedItems: function () {
-        return this.items.filter((item) => { return !item.finished }).length
+    this.data = dataStore
+    initNewItem()
+    autorun(() => {
+      this.itemsCount = this.data.items.length
+      this.unfinishedTasks = this.data.items.filter(task => !task.finished)
+      this.finishedTasks = this.data.items.filter(task => task.finished)
+    })
+  }
+  // private
+  let initNewItem = () => {
+    this.newItem = observable({
+      name: '',
+      finished: false,
+      itemClass () {
+        return this.finished ? 'done' : ''
       }
     })
-    this.dataStore.items.observe((change) => {
-      console.log(change.object.peek())
-    }, true)
   }
+  // public
   this.addItem = function (item) {
-    this.dataStore.items.push(Object.assign({}, item))
-    this.dataStore.newItem.name = ''
-    this.dataStore.newItem.finished = false
+    this.data.items.push(item)
+    initNewItem()
   }
   this.deleteItem = function (item) {
-    this.dataStore.items.remove(item)
+    this.data.items.remove(item)
   }
   this.setTitle = function (text) {
-    this.dataStore.title = text
+    this.data.title = text
   }
   this.archive = function () {
-    let unarchived = this.dataStore.items.filter((item) => { return !item.finished })
-    this.dataStore.items.replace(unarchived)
+    let unarchived = this.data.items.filter((item) => { return !item.finished })
+    this.data.items.replace(unarchived)
   }
 }
